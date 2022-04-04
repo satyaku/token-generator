@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>CKO Tokenization</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Checkout.com Test Card Tokenization System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/cards}">Back to other cards</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<div class = "container">
+  <div class = "row">
+    <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+      <h1 class = "text-center"> Tokenize Custom Card </h1>
+      <div class = "card-body">
+        <form th:action="@{/card/tokenize}" th:object = "${request}" method="POST">
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "number"
+                    th:field = "*{number}"
+                    class = "form-control"
+                    placeholder="Card Number"
+                    required
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "expiry_month"
+                    th:field = "*{expiry_month}"
+                    class = "form-control"
+                    placeholder="Card Expiry Month (range -> 01-12)"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "expiry_year"
+                    th:field = "*{expiry_year}"
+                    class = "form-control"
+                    placeholder="Card Expiry Year (range -> 2022-2050)"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "cvv"
+                    th:field = "*{cvv}"
+                    class = "form-control"
+                    placeholder="Card CVV"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "name"
+                    th:field = "*{name}"
+                    class = "form-control"
+                    placeholder="Card Holder's Name"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "address_line1"
+                    th:field = "*{address.address_line1}"
+                    class = "form-control"
+                    placeholder="Billing Address Line1"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "address_line2"
+                    th:field = "*{address.address_line2}"
+                    class = "form-control"
+                    placeholder="Billing Address Line2"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "city"
+                    th:field = "*{address.city}"
+                    class = "form-control"
+                    placeholder="Billing Address City"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "state"
+                    th:field = "*{address.state}"
+                    class = "form-control"
+                    placeholder="Billing Address State"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "zip"
+                    th:field = "*{address.zip}"
+                    class = "form-control"
+                    placeholder="Billing Address Zip"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "country"
+                    th:field = "*{address.country}"
+                    class = "form-control"
+                    placeholder="Billing Address Country"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "country_code"
+                    th:field = "*{phone.country_code}"
+                    class = "form-control"
+                    placeholder="Phone Country Code"
+            />
+          </div>
+          <div class ="form-group">
+            <input
+                    type = "text"
+                    name = "number"
+                    th:field = "*{phone.number}"
+                    class = "form-control"
+                    placeholder="Phone Number"
+            />
+          </div>
+
+          <div class = "box-footer">
+            <button type="submit" class = "btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>CKO Tokenization</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <h1> Token Details </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <a th:href="@{/cards}" class="btn btn-primary btn-sm mb-3"> Back to Home</a>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered">
+        <tbody th:object="${token}">
+        <tr>
+            <td th:text="Card_number"></td>
+            <td th:text="${#object.getCard_number()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Token"></td>
+            <td th:text="${#object.getToken()}" id="token"></td>
+        </tr>
+        <tr>
+            <td th:text="Expires_on"></td>
+            <td th:text="${#object.getExpires_on()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Expiry_month"></td>
+            <td th:text="${#object.getExpiry_month()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Expiry_year"></td>
+            <td th:text="${#object.getExpiry_year()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Scheme"></td>
+            <td th:text="${#object.getScheme()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Last4"></td>
+            <td th:text="${#object.getLast4()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Card_Holder_Name"></td>
+            <td th:text="${#object.getName()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Bin"></td>
+            <td th:text="${#object.getBin()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Card_type"></td>
+            <td th:text="${#object.getCard_type()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Card_category"></td>
+            <td th:text="${#object.getCard_category()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Issuer"></td>
+            <td th:text="${#object.getIssuer()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Issuer_country"></td>
+            <td th:text="${#object.getIssuer_country()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Product_id"></td>
+            <td th:text="${#object.getProduct_id()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Product_type"></td>
+            <td th:text="${#object.getProduct_type()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Billing_address"></td>
+            <td th:text="${#object.getBilling_address()}"></td>
+        </tr>
+        <tr>
+            <td th:text="Phone"></td>
+            <td th:text="${#object.getPhone()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
