@@ -16,8 +16,8 @@ public class CardDataController {
     }
 
     @GetMapping("/cards")
-    public String listCards(Model model, @RequestParam(required = false) String type){
-        model.addAttribute("cards", cardDataService.getAllCards(type));
+    public String listCards(Model model, @RequestParam(required = false) String type, @RequestParam(required = false) String scheme){
+        model.addAttribute("cards", cardDataService.getAllCards(type, scheme));
         return "cards";
     }
 }

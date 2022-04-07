@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class CardDataService {
 
-    public List<CardData> getAllCards(String type) {
-        return CardRepository.getAllCards(type);
+    public List<CardData> getAllCards(String type, String scheme) {
+        return CardRepository.getAllCards(type, scheme);
     }
 }

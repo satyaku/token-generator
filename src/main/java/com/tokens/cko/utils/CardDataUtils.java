@@ -22,7 +22,7 @@ public class CardDataUtils {
         card_list.add(new CardData("4539360659413827", "03", "2030", "100", "n3ds", "Visa,response_code -> 10000, Approved"));
         card_list.add(new CardData("378282246310005", "03", "2030", "1000", "3ds1", "Amex,REDIRECT_REQUIRED"));
         card_list.add(new CardData("4916301720257093", "03", "2030", "100", "n3ds", "response_code -> 20014, Invalid Card Number"));
-        card_list.add(new CardData("4532432452900131", "03", "2030", "257", "n3ds", "VISA, response_code -> 10000, Approved"));
+        card_list.add(new CardData("4532432452900131", "03", "2030", "257", "n3ds", "Visa, response_code -> 10000, Approved"));
         card_list.add(new CardData("5133078872660100", "03", "2030", "100", "n3ds", "Mastercard, response_code -> 10000, Approved"));
         card_list.add(new CardData("4484070000035519", "03", "2030", "100", "3ds1", "Visa, REDIRECT_REQUIRED"));
         card_list.add(new CardData("5352151570003404", "03", "2030", "100", "3ds1", "Mastercard, REDIRECT_REQUIRED"));

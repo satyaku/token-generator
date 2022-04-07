@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="#">Checkout.com Test Card Tokenization System</a>
+    <a class="navbar-brand" href="#">CKO Tokenization</a>
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -32,6 +32,18 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/cards?type=3ds2}">3DS2 Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/cards?scheme=Visa}">Visa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/cards?scheme=Mastercard}">Mastercard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/cards?scheme=Amex}">Amex</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/cards?scheme=Other}">Other schemes</a>
             </li>
         </ul>
     </div>
