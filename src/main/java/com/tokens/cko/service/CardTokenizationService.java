@@ -27,7 +27,7 @@ public class CardTokenizationService {
         RestTemplate template = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization","pk_test_3eb7e217-d4e1-4eb8-bdeb-98d5cd6ffcb9");
+        headers.set("Authorization","Bearer pk_sbox_mdloazfuguww7p6dlh7imidfry*");
         HttpEntity<TokenizationCKORequest> reqEntity = new HttpEntity<>(ckoRequest,headers);
         TokenizationResponse response = template.exchange("https://api.sandbox.checkout.com/tokens",
                 HttpMethod.POST,
@@ -42,7 +42,7 @@ public class CardTokenizationService {
         TokenizationCKOResponse ckoResponse = new TokenizationCKOResponse();
 
         ckoResponse.setCard_number(response.getCard_number());
-        ckoResponse.setBilling_address(response.getBilling_address().toString());
+        ckoResponse.setBilling_address(response.getBilling_address() != null ? response.getBilling_address().toString() : "");
         ckoResponse.setCard_category(response.getCard_category());
         ckoResponse.setType(response.getType());
         ckoResponse.setToken(response.getToken());
@@ -57,7 +57,7 @@ public class CardTokenizationService {
         ckoResponse.setIssuer_country(response.getIssuer_country());
         ckoResponse.setProduct_id(response.getProduct_id());
         ckoResponse.setProduct_type(response.getProduct_type());
-        ckoResponse.setPhone(response.getPhone().toString());
+        ckoResponse.setPhone(response.getPhone() != null ? response.getPhone().toString() : "");
         ckoResponse.setName(response.getName());
 
         return ckoResponse;
